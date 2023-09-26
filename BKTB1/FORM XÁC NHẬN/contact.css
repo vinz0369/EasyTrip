@@ -1,0 +1,66 @@
+
+body, h1, h2, p, ul, li, form, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image:url(https://minhtuanmobile.com/uploads/blog/me-dam-voi-5-bai-bien-dep-nhat-chau-a-230425114918.jpg);
+  padding: 150px;
+}
+
+
+.form-group {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 0 10px #faf7f7;
+}
+
+
+.heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+.controls {
+  margin-bottom: 15px;
+}
+
+.floatLabel {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: -10px;
+}
+
+label {
+  position: relative;
+  left: 10px;
+  top: -20px;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  color: #888;
+  transition: top 0.3s ease, font-size 0.3s ease;
+}
+
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
