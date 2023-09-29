@@ -1,0 +1,8 @@
+/* CSS for the hotel list */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
