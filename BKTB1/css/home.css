@@ -128,12 +128,14 @@ p {
 }
 
 #showcase .showcase-content {
-	color: #fff;
+	color: #ffffff;
 	text-align: center;
 	padding-top: 170px;
+
 }
 
 #showcase .showcase-content h1 {
+	color: aqua;
 	font-size: 60px;
 	line-height: 1.2em;
 	padding-bottom: 15px;

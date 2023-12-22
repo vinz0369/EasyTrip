@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
-    <title>Đăng Nhập</title>
+    <title>Đăng Ký</title>
 </head>
 <body>
     <div class="container">
-        <form id="loginForm" action="../php/login.php" method="post">
-            <h2>Đăng Nhập</h2>
+        <form id="signupForm" action="../php/signup.php" method="post">
+            <h2>Đăng Ký</h2>
+            <label for="username">Tên người dùng:</label>
+            <input type="text" id="username" name="username" required>
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
             <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" required><br>
+            <input type="password" id="password" name="password" required>
 
-            <button type="submit">Đăng Nhập</button><br>
-            <a href="signup.html" class="button" target="_blank">Đăng Kí</a>
-
+            <button type="submit">Đăng Ký</button>
         </form>
     </div>
 
-    <script src="../js/login.js"></script>
+    <script src="../js/signup.js"></script>
 </body>
 </html>

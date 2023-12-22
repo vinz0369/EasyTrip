@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị phòng</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <h2>Quản trị phòng</h2>
+
+    <!-- Form thêm phòng -->
+    <form action="../php/admin.php" method="post" enctype="multipart/form-data">
+        <h3>Thêm phòng mới</h3>
+        <label for="room_name">Tên phòng:</label>
+        <input type="text" name="room_name" required>
+
+        <label for="price">Giá:</label>
+        <input type="number" name="price" required>
+
+        <label for="description">Mô tả:</label>
+        <textarea name="description" required></textarea>
+
+        <label for="status">Trạng thái phòng:</label>
+        <select name="status" required>
+            <option value="available">Còn trống</option>
+            <option value="booked">Đã đặt</option>
+        </select>
+
+        <label for="image">Ảnh:</label>
+        <input type="file" name="image" accept="image/*" required>
+
+        <button type="submit" name="action" value="add">Thêm phòng</button>
+    </form>
+
+    <!-- Hiển thị danh sách phòng và chức năng sửa, xóa -->
+    <h3>Danh sách phòng</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên phòng</th>
+            <th>Giá</th>
+            <th>Mô tả</th>
+            <th>Trạng thái</th>
+            <th>Ảnh</th>
+            <th>Chức năng</th>
+        </tr>
+        <!-- Dữ liệu từ cơ sở dữ liệu sẽ được hiển thị ở đây -->
+    </table>
+</body>
+</html>

@@ -3,14 +3,16 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(https://gocheapv.b-cdn.net/storage/app/media/du%20l%E1%BB%8Bch/vinpearl-discovery-rockside-nha-trang-discovery.jpg);
+    background-image: url(https://free4kwallpapers.com/uploads/originals/2015/07/21/atlantis-hotel-dubai.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-size: 100% 100%; /* Kích thước chính xác, có thể cắt một phần của hình ảnh để phù hợp với kích thước nền */
+
   }
   
-  .container {
+  .container,a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +27,12 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
-  
+  a
+  {
+    color: #498ffc;
+    font-size: 12x;  
+    
+  }
   h2 {
     color: rgb(26, 7, 7);
     text-align: center;
@@ -59,7 +66,7 @@ body {
     cursor: pointer;
   }
   
-  button:hover {
+  button:hover  {
     background-color: #70c1ff;
   }
   
@@ -69,4 +76,6 @@ body {
       max-width: 350px;
     }
   }
+ 
+
   

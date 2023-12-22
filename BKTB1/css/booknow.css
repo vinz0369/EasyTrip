@@ -4,5 +4,28 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.room-item{
+    height: 100%;
+}
+.room-item img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
 
+}
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch; /* Đảm bảo các ô căng để có chiều cao giống nhau */
+  }
+  
+  .room-item-description p {
+    height: 60px; /* Đặt chiều cao cố định cho phần mô tả */
+    overflow: hidden; /* Ẩn nội dung vượt quá chiều cao của phần mô tả */
+  }
+  .room-item-buttons a {
+    height: 30px; /* Đặt chiều cao cố định cho nút */
+    line-height: 30px; /* Đảm bảo văn bản nằm giữa nút */
+  }
+        
