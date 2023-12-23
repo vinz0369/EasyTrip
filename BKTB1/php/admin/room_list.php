@@ -32,7 +32,8 @@ if ($result->num_rows > 0) {
                 <td>
                     <a href="edit_room.php?id=' . $row['id'] . '" class="btn btn-warning">Sửa</a>
                     <a href="delete_room.php?id=' . $row['id'] . '" class="btn btn-danger" onclick="return confirm(\'Bạn có chắc chắn muốn xóa phòng này không?\')">Xóa</a>
-                </td>
+
+                    </td>
             </tr>';
     }
 
