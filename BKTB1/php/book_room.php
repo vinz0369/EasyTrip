@@ -29,13 +29,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['room_id'])) {
     $stmt->bind_param("siss", $email, $room_id, $checkinDateFormatted, $checkoutDateFormatted);
 
 
-if ($stmt->execute()) {
-    $conn->commit();
+    if ($stmt->execute()) {
+        $conn->commit();
+        $stmt->close();
+        $conn->close();
 
-    echo "Đặt phòng thành công!";
-} else {
-    echo "Error: " . $stmt->error;
-}
+        header("Location:../html/cart.html ");
+        exit();
+    } else {
+        echo "Error: " . $stmt->error;
+    }
 
 $stmt->close();
 

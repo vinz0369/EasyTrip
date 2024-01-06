@@ -33,6 +33,7 @@ if (!isset($_SESSION['email'])) {
                     </tr>
                 </thead>
                 <tbody>';
+                
 
         while ($row = $result->fetch_assoc()) {
             $checkinDate = strtotime($row['checkindate']);
@@ -52,12 +53,15 @@ if (!isset($_SESSION['email'])) {
                     <td>' . $row['checkoutdate'] . '</td>
                     <td>' . $daysStayed . '</td>
                     <td>' . $totalPrice . '</td>
+                    <td><button class="cancelBookingBtn" data-booking-id="' . $row['id'] . '">Hủy Đặt Phòng</button></td>
                 </tr>';
         }
+        echo "<script>var totalprice = '$totalPrice';</script>";
 
         echo '</tbody></table>';
+        
     } else {
-        echo "Giỏ hàng của bạn đang trống.";
+        echo "Bạn chưa đặt phòng nào.";
     }
 
     $conn->close();

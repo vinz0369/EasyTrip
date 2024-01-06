@@ -35,6 +35,12 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách khách sạn</title>
+    <style>
+    #searchInput {
+        height: 100px; /* Điều chỉnh chiều cao theo mong muốn */
+        margin-top: 20px; /* Điều chỉnh khoảng cách từ phần trên của trang */
+    }
+</style>
     <!-- ... your existing head content ... -->
 </head>
 <body>
@@ -76,6 +82,7 @@ if (!$result) {
                     </button>
                 </div>
                 <!-- Thêm thẻ form bên trong modal body -->
+                
 <div class="modal-body">
     <form id="bookingForm" method= "post" action="./book_room.php" onsubmit="return confirmBooking()" >
         <div class="form-group">
@@ -94,6 +101,16 @@ if (!$result) {
             </div>
         </div>
     </div>
+    <div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+        <input type="text" class="form-control" id="searchInput" placeholder="Tìm kiếm theo tên hoặc mô tả">
+    </div>
+</div>
+
+<div id="searchResults" class="row g-4">
+    <!-- Kết quả tìm kiếm sẽ được hiển thị ở đây -->
+</div>
+
     <?php
     // Loop through the database results and dynamically generate HTML
     while ($row = $result->fetch_assoc()) {
@@ -154,6 +171,30 @@ if (!$result) {
         $(document).on('click', '.btn-dark', function() {
             $('#datePickerModal').modal('show');
         });
+    });
+    $(document).ready(function () {
+        $('#searchInput').on('input', function () {
+            performSearch();
+        });
+
+        $('#searchInput').on('keypress', function (e) {
+            if (e.which === 13) { // 13 là mã ASCII cho phím Enter
+                performSearch();
+                e.preventDefault(); // Ngăn chặn hành động mặc định của phím Enter (ví dụ: submit form)
+            }
+        });
+
+        function performSearch() {
+            var searchTerm = $('#searchInput').val().toLowerCase();
+
+            $('.room-item').hide();
+            $('.room-item').filter(function () {
+                var roomName = $(this).find('h5').text().toLowerCase();
+                var roomDescription = $(this).find('.text-body').text().toLowerCase();
+
+                return roomName.includes(searchTerm) || roomDescription.includes(searchTerm);
+            }).show();
+        }
     });
     
 </script>

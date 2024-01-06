@@ -7,16 +7,88 @@
     <title>Giỏ Hàng</title>
     <!-- Đưa vào các tệp CSS và JS cần thiết -->
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/booknow.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"> 
+    <script src="../js/session_check.js"></script>
+
+    
+
+
     <!-- Đưa vào jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách khách sạn</title>
+    <style>
+      #paypal-button-container {
+          margin-top: 350px; /* Adjust top margin as needed */
+          text-align: center; /* Center the button */
+          margin-left: 300px;
+      }
+      
+  </style>
+    <!-- ... your existing head content ... -->
+</head>
+<body>
+<header>
+    
 
-    <h2>Thông Tin Giỏ Hàng</h2>
+		<nav id="navbar">
+			<div class="container">
+				<h1 class="logo"><a href="../html/home.html">EASY STAY</a></h1>
+				<ul>
+					<li><a class="nav-link current" href="#" data-href="../html/home.html">TRANG CHỦ</a></li>
+					<li><a class="nav-link" href="#" data-href="contact.html">LIÊN HỆ</a></li>
+					<li><a class="nav-link" href="#" data-href="./cart.html">PHÒNG CỦA TÔI</a></li>
+					<li><a class="nav-link-login" href="#" data-href="login.html">ĐĂNG NHẬP</a></li>
+					<li><a class="nav-link-logout"href="../php/logout.php">ĐĂNG XUẤT</a></li>
+
+					
+				</ul>
+			</div>
+		</nav>
+
+    <h2>Thông Tin Đặt Phòng</h2>
 
     <div id="cart-container">
         <!-- Hiển thị thông tin giỏ hàng ở đây -->
     </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWY_O8TvA_MQ5agzBg1mq6ykFfTDPt8bXyjGU8CCi0H8qhDLBSS0Y0wFUYBHP6tGrzP6okWYIJMQO6-B"></script>
+<div id="paypal-button-container"></div>
+<script>
+    paypal.Buttons({
+      style: {
+    layout:  'vertical',
+    color:   '', 
+    shape:   'rect',
+    label:   'checkout'
+  },
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: totalprice,
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          // Xử lý thanh toán thành công, ví dụ: hiển thị thông báo
+          alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+      },
+      
+      
+    }).render('#paypal-button-container');
+  </script>
+  
+  
 
     <script src="../js/cart.js"></script>
 </body>
